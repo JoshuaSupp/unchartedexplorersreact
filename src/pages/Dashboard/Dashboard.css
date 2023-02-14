@@ -1,0 +1,474 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+:root {
+  --white: #fff;
+  --floralwhite: #fffbf0;
+  --blue: #0b3951;
+  --grey: #606263;
+  --black1: #011824;
+  --orange: #f98f26;
+  --red: #ff7a59;
+}
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+.container {
+  position: relative;
+  width: 100%;
+}
+.navigation {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background: var(--floralwhite);
+  border-left: 10px solid var(--floralwhite);
+  transition: 0.5s;
+  overflow: hidden;
+}
+.navigation.active {
+  width: 70px;
+}
+.navigation ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.navigation ul li {
+  position: relative;
+  width: 200%;
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+.navigation hr {
+  color: var(--grey);
+  width: 275px;
+  height: 1px;
+}
+.navigation ul li:hover,
+.navigation ul li.hovered {
+  background: var(--white);
+}
+.navigation ul li:nth-child(1) {
+  margin-bottom: 30px;
+  margin-top: 10px;
+  align-items: center;
+  pointer-events: none;
+}
+.navigation ul li a {
+  position: relative;
+  display: block;
+  width: 50%;
+  display: flex;
+  text-decoration: none;
+  color: var(--black1);
+}
+.navigation ul li:hover a,
+.navigation ul li.hovered a {
+  color: var(--orange);
+}
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 70px;
+  text-align: center;
+}
+.navigation ul li a .icon ion-icon {
+  font-size: 1.75em;
+}
+.navigation ul li a .title {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  height: 6-px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap;
+}
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 35px 35px 0 10px var(--white);
+  pointer-events: none;
+}
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 35px -35px 0 10px var(--white);
+  pointer-events: none;
+}
+.main {
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100vh;
+  background: var(--white);
+  transition: 0.5s;
+}
+.main.active {
+  width: calc(100% - 70px);
+  left: 70px;
+}
+.topbar {
+  position: static;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5em;
+}
+.search {
+  position: relative;
+  width: 400px;
+  margin: 0 10px;
+}
+.search label {
+  position: relative;
+  width: 100%;
+}
+.search label input {
+  width: 1005;
+  height: 40px;
+  border-radius: 40px;
+  padding: 5px 20px;
+  padding-left: 35px;
+  font-size: 18px;
+  outline: none;
+  border: 1px solid var(--grey);
+}
+.search label ion-icon {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  font-size: 1.2em;
+}
+.user {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+.user img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.sub-menu-wrap {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 320px;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.5s;
+  z-index: 10;
+}
+.sub-menu-wrap.open-menu {
+  max-height: 400px;
+}
+.sub-menu {
+  background: var(--white);
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+.user-info {
+  display: flex;
+  align-items: center;
+}
+.user-info h3 {
+  font-weight: 500;
+}
+.user-info img {
+  width: 60px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.sub-menu hr {
+  border: 0;
+  height: 1px;
+  width: 100%;
+  background: #ccc;
+  margin: 15px 0 10px;
+}
+.sub-menu-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #525252;
+  margin: 12px 0;
+}
+.sub-menu-link p {
+  width: 100%;
+}
+.sub-menu-link images {
+  width: 40px;
+  background: #e5e5e5;
+  border-radius: 50%;
+  padding: 8px;
+  margin-right: 15px;
+}
+.sub-menu-link span {
+  font-size: 22px;
+}
+.sub-menu-link:hover span {
+  transform: translateX(5px);
+}
+.sub-menu-link:hover p {
+  font-weight: 600;
+}
+.cardBox {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+}
+.cardBox .card {
+  position: relative;
+  background: var(--white);
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+.carBox .card .numbers {
+  position: relative;
+  font-weight: 500;
+  font-size: 2.5em;
+  color: var(--orange);
+}
+.cardBox .card .cardName {
+  color: var(--blue);
+  font-size: 1.1em;
+  margin-top: 5px;
+}
+.cardBox .card .iconBx {
+  font-size: 3.5em;
+  color: var(--blue);
+}
+.graphBox {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 30px;
+  min-height: 200px;
+}
+.graphBox .box {
+  position: relative;
+  background: #fff;
+  padding: 20px;
+  width: 100%;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+.graphBox h2 {
+  font-weight: 600;
+  color: var(--blue);
+}
+.details {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-gap: 30px;
+}
+.details .candidates {
+  position: relative;
+  display: grid;
+  min-height: 300px;
+  background: var(--white);
+  padding: 20px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+.cardheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.cardheader h2 {
+  font-weight: 600;
+  color: var(--blue);
+}
+.btn {
+  position: relative;
+  padding: 5px 10px;
+  background: var(--red);
+  text-decoration: none;
+  color: var(--white);
+  border-radius: 6px;
+}
+.details table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+.details table thead td {
+  font-weight: 600;
+}
+.details .candidates table tr {
+  color: var(--black1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.details .candidates table tr:last-child {
+  border-bottom: none;
+}
+.details .candidates table tr td {
+  padding: 10px;
+}
+.details .candidates table tr td:last-child {
+  text-align: end;
+}
+.details .candidates table tr td:nth-child(2) {
+  text-align: end;
+}
+.details .candidates table tr td:nth-child(3) {
+  text-align: end;
+}
+.new-application.candidate {
+  padding: 5px 20px;
+  background: #43945b;
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 500;
+}
+.interviewing.candidate {
+  padding: 5px 20px;
+  background: #eb8c34;
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 500;
+}
+.employees {
+  position: relative;
+  display: grid;
+  min-height: 500px;
+  padding: 20px;
+  background: var(--white);
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+.employees .imgBx {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.employees .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.employees table tr td {
+  padding: 12px 20px;
+}
+.employees .span {
+  color: #cecece;
+}
+
+@media (max-width: 991px) {
+  .graphBox {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .navigation {
+    left: -300px;
+  }
+  .navigation.active {
+    width: 300px;
+    left: 0;
+  }
+  .main {
+    width: 100%;
+    left: 0;
+  }
+  .main.active {
+    left: 300px;
+  }
+  .cardBox {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .candidates {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardBox {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .cardheader h2 {
+    font-size: 20px;
+  }
+  .user {
+    min-width: 40px;
+  }
+  .navigation {
+    width: 100%;
+    left: -100%;
+    z-index: 1000;
+  }
+  .navigation.active {
+    width: 100%;
+    left: 0;
+  }
+  .toggle {
+    z-index: 10001;
+  }
+  .main.active .toggle {
+    position: fixed;
+    right: 0;
+    left: initial;
+    color: var(--black1);
+  }
+}
