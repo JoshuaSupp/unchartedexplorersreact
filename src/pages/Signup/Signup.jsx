@@ -9,11 +9,13 @@ function Signup () {
         </nav>
 
         <form>
-            <img src="img/image2.png" alt="logo" class="center"/>
+            <img src="/img/meu_labs_logo.png" alt="logo" class="img"/>
             <h1>Welcome!</h1>
 
-            <div class="anchor">First time here, create account! Already have one? <a href="./Signin/Signin.jsx">Log in</a>
+            <div class="anchor">First time here, create account! Already have one?
             </div>
+            <br/>
+            <a href="/" style={{color:'blue'}}><u> Log in</u></a>
         
             <br/>
             <br/>
@@ -36,9 +38,11 @@ function Signup () {
             </div>
 
             <div id="login">
+            <a href='/Signup'>
             <button type="button" class="button buttonBlue">Sign Up
                 <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
             </button>
+            </a>
             </div>
         </form>
     </div>

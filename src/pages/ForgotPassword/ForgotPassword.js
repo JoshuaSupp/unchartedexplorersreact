@@ -19,12 +19,14 @@ function ForgotPassword () {
                 <a href='/#'>*</a>
               </label>
           </div>
-          <button onclick="document.ForgotPassword1()">Reset password</button>
+          <div>
+          <a href='/ForgotPassword1'><button onclick="document.ForgotPassword1()">Reset password</button></a>
+          </div>
             <div class="signup_link">Don't have an account?
-              <a href="/#">Sign up</a>
+              <a href="/Signup">Sign up</a>
             </div>
             <div class="signin_link">Alredy have one?
-              <a href="/#">Sign in</a>
+              <a href="/Signin">Sign in</a>
             </div>
         </form>
       </div>

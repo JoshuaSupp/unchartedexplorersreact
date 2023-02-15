@@ -3,29 +3,29 @@ import './Help.css';
 
 function Help() {
 
-    let toggle = document.querySelector('.toggle');
-    let navigation = document.querySelector('.navigation');
-    let main = document.querySelector('.main');
+    // let toggle = document.querySelector('.toggle');
+    // let navigation = document.querySelector('.navigation');
+    // let main = document.querySelector('.main');
 
-    toggle.onclick = function () {
-        navigation.classList.toggle('active');
-        main.classList.toggle('active');
-    }
+    // toggle.onclick = function () {
+    //     navigation.classList.toggle('active');
+    //     main.classList.toggle('active');
+    // }
 
-    let list = document.querySelectorAll('.navigation li');
-    function activelink() {
-        list.forEach((item) =>
-            item.classList.remove('hovered'));
-        this.classList.add('hovered');
-    }
-    list.forEach((item) =>
-        item.addEventListener('mouseover', activelink));
+    // let list = document.querySelectorAll('.navigation li');
+    // function activelink() {
+    //     list.forEach((item) =>
+    //         item.classList.remove('hovered'));
+    //     this.classList.add('hovered');
+    // }
+    // list.forEach((item) =>
+    //     item.addEventListener('mouseover', activelink));
 
-    let subMenu = document.getElementById("subMenu");
+    // let subMenu = document.getElementById("subMenu");
 
-    function toggleMenu() {
-    subMenu.classList.toggle("open-menu");
-    }
+    // function toggleMenu() {
+    // subMenu.classList.toggle("open-menu");
+    // }
 
   return(
     <div>

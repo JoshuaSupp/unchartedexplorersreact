@@ -3,27 +3,27 @@ import "./ContactUs.css";
 
 function ContactUs() {
 
-    let toggle = document.querySelector(".toggle");
-    let navigation = document.querySelector(".navigation");
-    let main = document.querySelector(".main");
+    // let toggle = document.querySelector(".toggle");
+    // let navigation = document.querySelector(".navigation");
+    // let main = document.querySelector(".main");
 
-    toggle.onclick = function () {
-      navigation.classList.toggle("active");
-      main.classList.toggle("active");
-    };
+    // toggle.onclick = function () {
+    //   navigation.classList.toggle("active");
+    //   main.classList.toggle("active");
+    // };
 
-    let list = document.querySelectorAll(".navigation li");
-    function activelink() {
-      list.forEach((item) => item.classList.remove("hovered"));
-      this.classList.add("hovered");
-    }
-    list.forEach((item) => item.addEventListener("mouseover", activelink));
+    // let list = document.querySelectorAll(".navigation li");
+    // function activelink() {
+    //   list.forEach((item) => item.classList.remove("hovered"));
+    //   this.classList.add("hovered");
+    // }
+    // list.forEach((item) => item.addEventListener("mouseover", activelink));
 
-    let subMenu = document.getElementById("subMenu");
+    // let subMenu = document.getElementById("subMenu");
 
-    function toggleMenu() {
-      subMenu.classList.toggle("open-menu");
-    }
+    // function toggleMenu() {
+    //   subMenu.classList.toggle("open-menu");
+    // }
 
   return (
     <div>
@@ -33,14 +33,14 @@ function ContactUs() {
             <li>
               <a href="/#">
                 <img
-                  width="200px"
+                 style={{width:"200px"}} 
                   alt="Meu Labs Logo"
-                  src="../Contact us/img/meu_labs_logo1.png"
+                  src="/img/meu_labs_logo1.png"
                 />
               </a>
             </li>
             <li>
-              <a href="/#">
+              <a href="/Dashboard">
                 <span class="icon">
                   <ion-icon name="grid-outline"></ion-icon>
                 </span>
@@ -48,7 +48,7 @@ function ContactUs() {
               </a>
             </li>
             <li>
-              <a href="/#">
+              <a href="/Admin">
                 <span class="icon">
                   <ion-icon name="person-outline"></ion-icon>
                 </span>
@@ -56,7 +56,7 @@ function ContactUs() {
               </a>
             </li>
             <li>
-              <a href="/#">
+              <a href="/Employees">
                 <span class="icon">
                   <ion-icon name="people-outline"></ion-icon>
                 </span>
@@ -64,34 +64,19 @@ function ContactUs() {
               </a>
             </li>
             <li>
-              <a href="/#">
-                <span class="icon">
-                  <ion-icon name="chatbubble-outline"></ion-icon>
-                </span>
-                <span class="title">Chat</span>
-              </a>
-            </li>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <li>
-              <a href="/#">
+              <a href="/ContactUs">
                 <span class="icon">
                   <ion-icon name="call-outline"></ion-icon>
                 </span>
                 <span class="title">Contact Us</span>
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                <span class="icon">
+                  <ion-icon name="chatbubble-outline"></ion-icon>
+                </span>
+                <span class="title">Log Out</span>
               </a>
             </li>
           </ul>
@@ -112,7 +97,7 @@ function ContactUs() {
 
           <img
             class="user"
-            src="../Contact us/img/user.png"
+            src="/img/user.png"
             onclick="toggleMenu()"
             alt="User"
           />
@@ -120,7 +105,7 @@ function ContactUs() {
           <div class="sub-menu-wrap" id="subMenu">
             <div class="sub-menu">
               <div class="user-info">
-                <img alt="User" src="../Contact us/img/user.png" />
+                <img alt="User" src="/img/user.png" />
                 <h3>Shayen Yatagama</h3>
               </div>
               <hr />

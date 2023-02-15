@@ -1,46 +1,50 @@
 import React from 'react';
 import './Dashboard.css';
 
+
 function Dashboard() {
 
-    let toggle = document.querySelector('.toggle');
-    let navigation = document.querySelector('.navigation');
-    let main = document.querySelector('.main');
+    // let toggle = document.querySelector('.toggle');
+    // let navigation = document.querySelector('.navigation');
+    // let main = document.querySelector('.main');
 
-    toggle.onclick = function () {
-        navigation.classList.toggle('active');
-        main.classList.toggle('active');
-    }
+    // toggle.onclick = function () {
+    //     navigation.classList.toggle('active');
+    //     main.classList.toggle('active');
+    // }
 
-    let list = document.querySelectorAll('.navigation li');
-    function activelink() {
-        list.forEach((item) =>
-            item.classList.remove('hovered'));
-        this.classList.add('hovered');
-    }
-    list.forEach((item) =>
-        item.addEventListener('mouseover', activelink));
+    // let list = document.querySelectorAll('.navigation li');
+    // function activelink() {
+    //     list.forEach((item) =>
+    //         item.classList.remove('hovered'));
+    //     this.classList.add('hovered');
+    // }
+    // list.forEach((item) =>
+    //     item.addEventListener('mouseover', activelink));
 
-    let subMenu = document.getElementById("subMenu");
-
-    function toggleMenu() {
-        subMenu.classList.toggle("open-menu");
-    }
+    
+   
+    // const subMenu = function toggleMenu() {
+    //     subMenu.classList.toggle("open-menu");
+    // }  
+    
 
   return(
-    <div>
+    
+    <div class='dashboardpg'>
+    
         <div class="container">
             <div class="navigation">
                 <ul>
                     <li>
                         <a href="/#">
-                            <img width="200px"
-                                src="../Dashboard/images/meu_labs_logo1.png"
+                            <img style={{width:'150px'}}
+                                src="/img/meu_labs_logo1.png"
                                 alt='Meu Labs Logo'/>
                         </a>
                     </li>
                     <li>
-                        <a href="/#">
+                        <a href="/Dashboard">
                             <span class="icon">
                                 <ion-icon name="grid-outline"></ion-icon>
                             </span>
@@ -48,7 +52,7 @@ function Dashboard() {
                         </a>
                     </li>
                     <li>
-                        <a href="/#">
+                        <a href="/Admin">
                             <span class="icon">
                                 <ion-icon name="person-outline"></ion-icon>
                             </span>
@@ -56,7 +60,7 @@ function Dashboard() {
                         </a>
                     </li>
                     <li>
-                        <a href="/#">
+                        <a href="/Employees">
                             <span class="icon">
                                 <ion-icon name="people-outline"></ion-icon>
                             </span>
@@ -64,36 +68,23 @@ function Dashboard() {
                         </a>
                     </li>
                     <li>
-                        <a href="/#">
-                            <span class="icon">
-                                <ion-icon name="chatbubble-outline"></ion-icon>
-                            </span>
-                            <span class="title">Chat</span>
-                        </a>
-                    </li>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <li>
-                        <a href="/#">
+                        <a href="/ContactUs">
                             <span class="icon">
                                 <ion-icon name="call-outline"></ion-icon>
                             </span>
                             <span class="title">Contact Us</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="/">
+                            <span class="icon">
+                                <ion-icon name="chatbubble-outline"></ion-icon>
+                            </span>
+                            <span class="title">Log Out</span>
+                        </a>
+                    </li>
+                   
+                
                 </ul>
             </div>
         </div>
@@ -111,7 +102,7 @@ function Dashboard() {
                 </div>
 
                 <img class="user"
-                    src="../Dashboard/images/user.png"
+                    src="/img/user.png"
                     onclick="toggleMenu()"
                     alt='User'/>
 
@@ -119,7 +110,7 @@ function Dashboard() {
                     <div class="sub-menu">
                         <div class="user-info">
                             <img
-                                src="../Dashboard/images/user.png"
+                                src="/img/user.png"
                                 alt=''/>
                             <h3>Shayen Yatagama</h3>
                         </div>
@@ -140,7 +131,7 @@ function Dashboard() {
                             <p>Settings</p>
                             <span><ion-icon name="chevron-forward-outline"></ion-icon></span>
                         </a>
-                        <a href="/#" class="sub-menu-link">
+                        <a href="/Help" class="sub-menu-link">
                             <images><ion-icon name="information-circle-outline"></ion-icon></images>
                             <p>Help & Support</p>
                             <span><ion-icon name="chevron-forward-outline"></ion-icon></span>
@@ -154,7 +145,7 @@ function Dashboard() {
                 </div>
             </div>
 
-            !--cards--
+      
             <div class="cardBox">
                 <div class="card">
                     <div>
@@ -197,8 +188,6 @@ function Dashboard() {
             <div class="graphBox">
                 <div class="box">
                     <h2>Leaves</h2>
-                    <br/>
-                    <canvas id="myChart"></canvas>
                 </div>
                 <div class="box">
                     <h2>Attendence</h2>
@@ -211,7 +200,7 @@ function Dashboard() {
                 <div class="candidates">
                     <div class="cardheader">
                         <h2>Hiring Pipeline</h2>
-                        <a href="/#" class="btn">View All</a>
+                        <a href="/" class="btn">View All</a>
                     </div>
                     <table>
                         <thead>
@@ -263,23 +252,23 @@ function Dashboard() {
                     <table>
                         <tr>
                             <td><h4>KX</h4><br/><span>Total Members 12</span></td>
-                            <td width="60px"><div class="imgBx"><img src="../Dashboard/images/user1.png" alt='User'/></div></td>
+                            <td width="60px"><div class="imgBx"><img src="/img/user1.png" alt='User'/></div></td>
                         </tr>
                         <tr>
                             <td><h4>SE</h4><br/><span>Total Members 12</span></td>
-                            <td width="60px"><div class="imgBx"><img src="../Dashboard/images/user2.png" alt='User'/></div></td>
+                            <td width="60px"><div class="imgBx"><img src="/img/user2.png" alt='User'/></div></td>
                         </tr>
                         <tr>
                             <td><h4>KX</h4><br/><span>Total Members 12</span></td>
-                            <td width="60px"><div class="imgBx"><img src="../Dashboard/images/user1.png" alt='User'/></div></td>
+                            <td width="60px"><div class="imgBx"><img src="/img/user1.png" alt='User'/></div></td>
                         </tr>
                         <tr>
                             <td><h4>AN</h4><br/><span>Total Members 12</span></td>
-                            <td width="60px"><div class="imgBx"><img src="../Dashboard/images/user2.png" alt='User'/></div></td>
+                            <td width="60px"><div class="imgBx"><img src="/img/user2.png" alt='User'/></div></td>
                         </tr>
                         <tr>
                             <td><h4>SE</h4><br/><span>Total Members 12</span></td>
-                            <td width="60px"><div class="imgBx"><img src="../Dashboard/images/user2.png" alt='User'/></div></td>
+                            <td width="60px"><div class="imgBx"><img src="/img/user2.png" alt='User'/></div></td>
                         </tr>
                     </table>
                 </div>

@@ -8,10 +8,10 @@ function Signin() {
         <button class="language">English (UK)</button>
       </nav>
 
-      <img width="100px" src="/Login/img/meu_labs_logo.png" alt="logo" class="center"/>
+      <img width="50px" src="/img/meu_labs_logo.png" alt="logo" class="img"/>
       <h1>Welcome</h1>
       <div class="anchor">
-        Don't have an account?<h2><a href="/Signup.jsx">Sign up</a></h2>
+        Don't have an account?<h2><a href="/Signup">Sign up</a></h2>
       </div>
 
       <form>
@@ -23,12 +23,21 @@ function Signin() {
           <input type="email"/><span class="highlight"></span><span class="bar"></span>
           <label>Password</label>
         </div>
+
+       
+
         <div id="login">
-          <button type="button" class="button buttonBlue">Login
+          <a href='/Dashboard'>
+          <button type="button" id='loginbutton'>Login
             <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
           </button>
+          </a>
         </div>
       </form>
+      <div id='forgot'>
+          <a href='/ForgotPassword'> </a>
+        </div>
+      
     </div>
   );
 }

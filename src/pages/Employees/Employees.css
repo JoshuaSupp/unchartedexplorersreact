@@ -1,0 +1,25 @@
+.checked {
+    color: orange;
+  }
+
+  #emppg input[type=submit] {
+      width: 100%;
+      background-color: #f29c08;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  
+    #emppg #BTNcreate{
+      background-color: white;
+    color: black;
+    border: 2px solid #555555;
+    font-size: 20px;
+    margin-left: 85%;
+    }
+  #emppg #BTNcreate:hover {
+      background-color: #555555;
+      color: white;}

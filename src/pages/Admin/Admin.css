@@ -1,0 +1,45 @@
+#admin #customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #admin  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #admin #customers tr:nth-child(even){background-color: #fa8a02;}
+  
+  #admin #customers tr:hover {background-color: rgb(255, 252, 252);}
+  
+  #admin #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #f9a413;
+    color: white;
+  }
+
+  #admin #BTNcreate{
+    background-color: white;
+  color: black;
+  border: 2px solid #555555;
+  font-size: 20px;
+  margin-left: 85%;
+  }
+  #admin #BTNcreate:hover {
+    background-color: #555555;
+    color: white;}
+
+
+  #btnback{
+  color: black;
+  border: 2px solid #555555;
+  font-size: 20px;
+  margin-bottom: 1%;
+  }
+
+  #btnback:hover {
+    background-color: #555555;
+    color: white;}
