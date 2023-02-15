@@ -1,7 +1,6 @@
 import React from 'react';
 import './Dashboard.css';
 
-
 function Dashboard() {
 
     // let toggle = document.querySelector('.toggle');
@@ -22,24 +21,21 @@ function Dashboard() {
     // list.forEach((item) =>
     //     item.addEventListener('mouseover', activelink));
 
-    
-   
-    // const subMenu = function toggleMenu() {
+    // let subMenu = document.getElementById("subMenu");
+
+    // function toggleMenu() {
     //     subMenu.classList.toggle("open-menu");
-    // }  
-    
+    // }
 
   return(
-    
-    <div class='dashboardpg'>
-    
+    <div>
         <div class="container">
             <div class="navigation">
                 <ul>
                     <li>
-                        <a href="/#">
-                            <img style={{width:'150px'}}
-                                src="/img/meu_labs_logo1.png"
+                        <a href="/Dashboard">
+                            <img style={{width:"200px"}}
+                                src="img/meu_labs_logo1.png"
                                 alt='Meu Labs Logo'/>
                         </a>
                     </li>
@@ -67,6 +63,9 @@ function Dashboard() {
                             <span class="title">Employees</span>
                         </a>
                     </li>
+                   
+                  
+                  
                     <li>
                         <a href="/ContactUs">
                             <span class="icon">
@@ -83,8 +82,6 @@ function Dashboard() {
                             <span class="title">Log Out</span>
                         </a>
                     </li>
-                   
-                
                 </ul>
             </div>
         </div>
@@ -144,8 +141,7 @@ function Dashboard() {
                     </div>
                 </div>
             </div>
-
-      
+            
             <div class="cardBox">
                 <div class="card">
                     <div>
@@ -188,6 +184,8 @@ function Dashboard() {
             <div class="graphBox">
                 <div class="box">
                     <h2>Leaves</h2>
+                    <br/>
+                    <canvas id="myChart"></canvas>
                 </div>
                 <div class="box">
                     <h2>Attendence</h2>
@@ -200,7 +198,7 @@ function Dashboard() {
                 <div class="candidates">
                     <div class="cardheader">
                         <h2>Hiring Pipeline</h2>
-                        <a href="/" class="btn">View All</a>
+                        <a href="/#" class="btn">View All</a>
                     </div>
                     <table>
                         <thead>
